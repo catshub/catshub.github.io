@@ -337,7 +337,12 @@
                 <div class="short-about">
                     <!--侧边栏头像-->
                     
-                    <img src="/images/static/head.png"/>
+                    <img id="xqHead" src="/images/static/head.png"/>
+                    <!-- xq head -->
+                    <script>
+                        var img=document.getElementById('xqHead');
+                        img.style.height=img.offsetWidth-10+"px";
+                    </script>
                     
                     <h5><a href="/about/">Mr.XQ</a></h5>
                     
