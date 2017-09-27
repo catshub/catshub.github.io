@@ -174,13 +174,6 @@
         </span>
     </div>
 </header>
-<style>
-    pre {  
-white-space: pre-wrap;  
-word-wrap:break-word ;
-overflow: auto;
-} 
-</style>
 
 <!-- Post Content -->
 <article>
@@ -188,11 +181,11 @@ overflow: auto;
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>近期遇到一个问题——<code>&quot;position:relative&quot;</code>到底会不会导致元素脱离文档流？虽然主流观点都是不会，但都给不出一个有说服力的依据。最后我自己佐证了一番，总算有了个结果：<br><strong><code>&quot;position:relative&quot;</code>不会导致元素脱离文档流</strong>。</p>
-<h1 id="quot-relative-quot-与文档流"><a href="#quot-relative-quot-与文档流" class="headerlink" title="&quot;relative&quot;与文档流"></a><code>&quot;relative&quot;</code>与文档流</h1><p>说到标准，最权威的自然莫过于<code>CSS标准文档</code>。经过一番繁琐的查找之后（w3c网站找东西是真的累。。。），终于被我找到了。文档中<code>positioning-scheme</code>一节写道：<br><img src="/images/articles/relative-in-flow/relative-1.png" alt="relative-in-flow"><br>链接：<a href="https://www.w3.org/TR/CSS22/visuren.html#positioning-scheme" target="_blank" rel="external">https://www.w3.org/TR/CSS22/visuren.html#positioning-scheme</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">An element is called out of flow <span class="keyword">if</span> it is floated, absolutely positioned, or is the root element. An element is called <span class="keyword">in</span>-flow <span class="keyword">if</span> it is not out-of-flow.</div></pre></td></tr></table></figure></p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>近期遇到一个问题——<code>&quot;position:relative&quot;</code>到底会不会导致元素脱离文档流？主流观点是不会，但都给不出一个有说服力的论据。最后我自己佐证了一番，总算有了个结果：<br><strong><code>&quot;position:relative&quot;</code>不会导致元素脱离文档流</strong>。</p>
+<h1 id="quot-relative-quot-与文档流"><a href="#quot-relative-quot-与文档流" class="headerlink" title="&quot;relative&quot;与文档流"></a><code>&quot;relative&quot;</code>与文档流</h1><p>说到标准，最权威的自然莫过于<code>CSS标准文档</code>。经过一番繁琐的查找之后（w3c网站找东西是真的累。。。），终于被我找到了。文档中<code>&quot;positioning-scheme&quot;</code>一节写道：<br><img src="/images/articles/relative-in-flow/relative-1.png" alt="relative-in-flow"><br>链接：<a href="https://www.w3.org/TR/CSS22/visuren.html#positioning-scheme" target="_blank" rel="external">https://www.w3.org/TR/CSS22/visuren.html#positioning-scheme</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">An element is called out of flow <span class="keyword">if</span> it is floated, absolutely positioned, or is the root element. An element is called <span class="keyword">in</span>-flow <span class="keyword">if</span> it is not out-of-flow.</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">当元素是浮动，绝对定位或者根元素时，元素被称为&quot;流外元素&quot;，否则被称为&quot;流内元素&quot;。</div></pre></td></tr></table></figure>
 <p>很明显，<code>&quot;position:relative&quot;</code>的元素仍在文档流中。<br>另外，推荐下一个人认为不错的文章：<br><a href="http://www.cnblogs.com/chuaWeb/p/html_css_position_float.html" target="_blank" rel="external">html/css基础篇——DOM中关于脱离文档流的几种情况分析</a></p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>关于这个问题，还有我个人的因素。前几天，我面试了某公司前端职位。面试官呢，是一位对面试回答要求达到背书级准确的人，认为自己的观点是绝对正确的，对我的观点嗤之以鼻。本人呢，对自己的观点也很坚持，故而就一些分歧意见有些争执。当然，因为面试，我也有妥协，所以最后都是我被面试官各种教育“这个才是对的”。<br>其中最后一个问题便是<code>&quot;position:relative&quot;</code>是否会导致元素脱离文档流。我认为不会，面试官认为会，因为之前的压抑，所以这个问题我有些固执（没有商量余地，有些受不了），最后还是被教育了。。。并被面试官一句“那就到这里吧”结束了面试。<br>之后，自己各方求证，但结果大多都没有靠谱的依据。当然，最后总算是解决了这个问题。写篇博文发泄发泄哈哈。<br><!-- blog --></p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>关于这个问题，还有我个人的因素。前几天，我面试了某公司前端职位。面试官呢，是一位对面试回答要求达到背书级准确的人，认为自己的观点是绝对正确的，对我的观点嗤之以鼻。本人呢，对自己的观点也很坚持，故而就一些问题有些争执。当然，因为面试，我也有妥协，所以最后都是我被面试官各种教育“这个才是对的”，感觉很憋屈。<br>其中最后一个问题便是<code>&quot;position:relative&quot;</code>是否会导致元素脱离文档流。我认为不会，面试官认为会，因为之前的压抑，所以这个问题我有些固执（没有商量余地，有些受不了），最后还是被教育了。。。并被面试官一句“那就到这里吧”结束了面试。<br>之后，自己各方求证，但结果大多都没有靠谱的依据。最后总算是解决了这个问题，写篇博文发泄发泄哈哈。<br><!-- blog --></p>
 <!-- local -->
 <!-- 
 [1]: ../images/articles/relative-in-flow/relative-1.png
