@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="个人博客记 —— Github pages 绑定个人域名 - xqone blog">
-    <meta name="keywords" content="blog domain 绑定域名">
+    <meta name="description" content="xqone blog CSS中&#34;position&#34;属性与文档流的关系">
+    <meta name="keywords" content="css position relative">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        个人博客记 —— Github pages 绑定个人域名｜XQONE&#39;s Blog
+        CSS中&#34;position:relative&#34;属性与文档流的关系｜XQONE&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="https://xqone.github.io/2017/09/16/github-domainName/">
+    <link rel="canonical" href="https://xqone.github.io/2017/09/27/relative-in-flow/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -127,13 +127,13 @@
 <!--only post-->
 
 
-<img class="wechat-title-img" src="/images/articles/github-domain/bg.png">
+<img class="wechat-title-img" src="/images/articles/relative-in-flow/bg.png">
 
 
 <style>
     
     header.intro-header {
-        background-image: url('/images/articles/github-domain/bg.png');
+        background-image: url('/images/articles/relative-in-flow/bg.png');
     }
 
     
@@ -144,24 +144,24 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>个人博客记 —— Github pages 绑定个人域名</h1>
+                    <h1>CSS中&#34;position:relative&#34;属性与文档流的关系</h1>
                     
                     <span class="meta">
                          作者 XQONE
                         <span>
-                          日期 2017-09-16
+                          日期 2017-09-27
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#blog"
-                           title="blog">blog</a>
-                        
                         <a class="tag" href="/tags/#原创"
                            title="原创">原创</a>
                         
-                        <a class="tag" href="/tags/#github"
-                           title="github">github</a>
+                        <a class="tag" href="/tags/#html"
+                           title="html">html</a>
+                        
+                        <a class="tag" href="/tags/#css"
+                           title="css">css</a>
                         
                     </div>
                 </div>
@@ -170,10 +170,17 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            个人博客记 —— Github pages 绑定个人域名
+            CSS中"position:relative"属性与文档流的关系
         </span>
     </div>
 </header>
+<style>
+    pre {  
+white-space: pre-wrap;  
+word-wrap:break-word ;
+overflow: auto;
+} 
+</style>
 
 <!-- Post Content -->
 <article>
@@ -181,29 +188,16 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>近日搭建了自己的 <code>Blog</code>，使用的是 <code>Hexo</code> + <code>github pages</code>。众所周知，<code>github pages</code>的域名都是统一的<code>your_name.github.io</code>。想了想，能不能换个域名呢？当然是可以滴。<br>于是，在度娘了之后，也算找到了方法。但是网上的介绍都是操作流程，没有详细的解释，我自己也是有些迷糊。好在域名绑定成功了。遂决定写一篇博文分享一下自己对这个过程的理解。<br>请自行准备：个人的 <code>github pages</code>，个人域名。<br><code>简书</code>：<a href="http://www.jianshu.com/p/cd0b80f7f1c4" target="_blank" rel="external">个人博客记 —— Github pages 绑定个人域名</a><br><code>SegmentFault</code>：<a href="https://segmentfault.com/a/1190000011203711" target="_blank" rel="external">个人博客记 —— Github pages 绑定个人域名</a></p>
-<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>绑定域名需要在 <strong>域名解析服务商</strong> 和 <strong><code>github</code></strong> 两边都进行操作。</p>
-<ol>
-<li>在域名解析服务商进行个人域名解析，将域名绑定到个人 <code>github pages</code>。</li>
-<li>同时在 <code>github pages</code> 需要配置 <code>CNAME</code> 文件将网站重定向到你的域名。</li>
-</ol>
-<h1 id="1-域名解析配置"><a href="#1-域名解析配置" class="headerlink" title="1.域名解析配置"></a>1.域名解析配置</h1><p>简单点说就是将域名和IP或其他域名进行绑定，让你能通过不同域名访问同一个网站。<br>解析商不多说，<code>DNSPod</code>、<code>阿里云</code>、<code>腾讯云</code>等等。一般国内域名购买商都同时提供解析服务。我使用的是<code>腾讯云</code>买的域名 <code>xhuyq.me</code> ，就用腾讯云解析了。</p>
-<p><strong>注：以下过程为通用版本，非具体解析商的操作过程。</strong></p>
-<p>首先找到域名管理，选择域名解析功能。<code>记录类型</code>（如图提示），我们选择 <code>A记录</code> 或者 <code>CNAME</code> 就可以了。接下里就是域名解析的几个要点：</p>
-<p><img src="/images/articles/github-domain/domain-1.png" alt="domain-1"> <img src="/images/articles/github-domain/domain-2.png" alt="domain-2"> </p>
-<p>(1) <code>A记录</code> 类型 <code>记录值</code>填写 <code>IP</code> 值，两种选择：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; 你的 `github.io` 的 `IP` 值</div><div class="line">&gt; 在官方提供的两个 `IP` 中选择 `192.30.252.153`、`192.30.252.154`</div></pre></td></tr></table></figure></p>
-<p>(2) <code>CNAME</code>类型 （如图提示），请选好<code>主机记录</code>，按<code>主机记录</code>类型填写记录值。推荐选择的 <code>@</code> ，那么<code>记录值</code>就填写按各位<code>github</code>名填写<code>your_name.github.io</code>就好了。</p>
-<h1 id="2-github-pages-方面的-CNAME-文件配置"><a href="#2-github-pages-方面的-CNAME-文件配置" class="headerlink" title="2.github pages 方面的 CNAME 文件配置"></a>2.<code>github pages</code> 方面的 <code>CNAME</code> 文件配置</h1><p>（1）在<code>github</code>的<code>github pages</code>的仓库根目录里加上<code>CNAME</code>文件，里面写上个人域名即可。我的是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhuyq.me</div></pre></td></tr></table></figure></p>
-<p>（2）或者直接在<code>github.io</code>仓库的<code>Settings</code>的<code>GitHub Pages</code>项直接设置<code>Custom domain</code>,<code>github</code>会自动添加<code>CNAME</code>文件:</p>
-<p><img src="/images/articles/github-domain/domain-3.png" alt="domain-3"></p>
-<h1 id="3-个人理解"><a href="#3-个人理解" class="headerlink" title="3.个人理解"></a>3.个人理解</h1><p>那么，为什么配置了域名解析还要配置<code>CNAME</code> 文件呢？<br>实际上，<code>个人域名</code>是<code>名字</code>，<code>github pages</code>相当于<code>网站空间</code>。试想，如果不在<code>网站空间</code>配置<code>CNAME</code>，就可以成功绑定域名，那么岂不是可以给别随便一个的网站绑定上自己的域名？相同，如果只需配置<code>github pages</code>的<code>CNAME</code>，而不用<code>域名解析</code>，那不是也可以将自己的网站绑在别人的域名上？<br><strong>所以，域名绑定是需要<code>“双方同意”</code>的。</strong><br>如有不当，万望指正！</p>
-<!-- blog -->
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>近期遇到一个问题——<code>&quot;position:relative&quot;</code>到底会不会导致元素脱离文档流？虽然主流观点都是不会，但都给不出一个有说服力的依据。最后我自己佐证了一番，总算有了个结果：<br><strong><code>&quot;position:relative&quot;</code>不会导致元素脱离文档流</strong>。</p>
+<h1 id="quot-relative-quot-与文档流"><a href="#quot-relative-quot-与文档流" class="headerlink" title="&quot;relative&quot;与文档流"></a><code>&quot;relative&quot;</code>与文档流</h1><p>说到标准，最权威的自然莫过于<code>CSS标准文档</code>。经过一番繁琐的查找之后（w3c网站找东西是真的累。。。），终于被我找到了。文档中<code>positioning-scheme</code>一节写道：<br><img src="/images/articles/relative-in-flow/relative-1.png" alt="relative-in-flow"><br>链接：<a href="https://www.w3.org/TR/CSS22/visuren.html#positioning-scheme" target="_blank" rel="external">https://www.w3.org/TR/CSS22/visuren.html#positioning-scheme</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">An element is called out of flow <span class="keyword">if</span> it is floated, absolutely positioned, or is the root element. An element is called <span class="keyword">in</span>-flow <span class="keyword">if</span> it is not out-of-flow.</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">当元素是浮动，绝对定位或者根元素时，元素被称为&quot;流外元素&quot;，否则被称为&quot;流内元素&quot;。</div></pre></td></tr></table></figure>
+<p>很明显，<code>&quot;position:relative&quot;</code>的元素仍在文档流中。<br>另外，推荐下一个人认为不错的文章：<br><a href="http://www.cnblogs.com/chuaWeb/p/html_css_position_float.html" target="_blank" rel="external">html/css基础篇——DOM中关于脱离文档流的几种情况分析</a></p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>关于这个问题，还有我个人的因素。前几天，我面试了某公司前端职位。面试官呢，是一位对面试回答要求达到背书级准确的人，认为自己的观点是绝对正确的，对我的观点嗤之以鼻。本人呢，对自己的观点也很坚持，故而就一些分歧意见有些争执。当然，因为面试，我也有妥协，所以最后都是我被面试官各种教育“这个才是对的”。<br>其中最后一个问题便是<code>&quot;position:relative&quot;</code>是否会导致元素脱离文档流。我认为不会，面试官认为会，因为之前的压抑，所以这个问题我有些固执（没有商量余地，有些受不了），最后还是被教育了。。。并被面试官一句“那就到这里吧”结束了面试。<br>之后，自己各方求证，但结果大多都没有靠谱的依据。当然，最后总算是解决了这个问题。写篇博文发泄发泄哈哈。<br><!-- blog --></p>
 <!-- local -->
 <!-- 
-[1]: ../images/articles/github-domain/domain-1.png
-[2]: ../images/articles/github-domain/domain-2.png
-[3]: ../images/articles/github-domain/domain-3.png
- -->
+[1]: ../images/articles/relative-in-flow/relative-1.png
+[2]: http://www.cnblogs.com/chuaWeb/p/html_css_position_float.html 
+-->
 
 
                 <hr>
@@ -211,7 +205,7 @@
                 <p style="color:#DB4646;background:rgba(0,0,0,0.1);padding:10px 15px;font-size:0.8em">
                     <strong>
                         原创文章，如需转载，希望注明出处：<br />
-                        转自 XQONE&#39;s Blog：个人博客记 —— Github pages 绑定个人域名 — http://xhuyq.me/2017/09/16/github-domainName/
+                        转自 XQONE&#39;s Blog：CSS中&#34;position:relative&#34;属性与文档流的关系 — http://xhuyq.me/2017/09/27/relative-in-flow/
                     </strong>
                 </p>
                 
@@ -219,20 +213,15 @@
                 <ul class="pager">                    
                      <!-- 其实是前一篇 -->
                     <li class="previous">
-                        <a href="/2017/09/14/huawei/" data-toggle="tooltip" data-placement="top"
-                           title="华为2018届校招技术岗笔试题及个人解答">&larr; Previous Post</a>
+                        <a href="/2017/09/16/github-domainName/" data-toggle="tooltip" data-placement="top"
+                           title="个人博客记 —— Github pages 绑定个人域名">&larr; Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2017/09/27/relative-in-flow/" data-toggle="tooltip" data-placement="top"
-                            title="CSS中"position:relative"属性与文档流的关系">Next Post &rarr;</a>
-                    </li>
                     
                 </ul>
 
                 <!--PC和WAP自适应版--><!-- 畅言评论 -->
-                <div id="SOHUCS" sid="2017091601" ></div> 
+                <div id="SOHUCS" sid="2017092701" ></div> 
                 <script type="text/javascript"> 
                 (function(){ 
                 var appid = 'cytdtTi7J'; 
@@ -253,7 +242,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简述"><span class="toc-text">简述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-域名解析配置"><span class="toc-text">1.域名解析配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-github-pages-方面的-CNAME-文件配置"><span class="toc-text">2.github pages 方面的 CNAME 文件配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-个人理解"><span class="toc-text">3.个人理解</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#quot-relative-quot-与文档流"><span class="toc-text">"relative"与文档流</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-text">后记</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -275,14 +264,14 @@
                     </h5>
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#blog"
-                           title="blog">blog</a>
-                        
                         <a class="tag" href="/tags/#原创"
                            title="原创">原创</a>
                         
-                        <a class="tag" href="/tags/#github"
-                           title="github">github</a>
+                        <a class="tag" href="/tags/#html"
+                           title="html">html</a>
+                        
+                        <a class="tag" href="/tags/#css"
+                           title="css">css</a>
                         
                     </div>
                 </section>
