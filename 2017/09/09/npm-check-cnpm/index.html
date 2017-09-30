@@ -84,14 +84,14 @@
                         
                     
                         
-                    
-                        
 							
                         <li>
                             <a href="/tags/">TAGS</a>
                         </li>
 							
 						
+                    
+                        
                     
 					
 					
@@ -194,22 +194,22 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1>前言</h1>
+                <h1 id="前言">前言</h1>
 <p>近期在项目中准备更新一下<code>npm</code>依赖包，可一尝试，惊了！批量更新还真麻烦。各种包要挨个更新，就算直接更改<code>package.json</code>也挺费事。
 于是度娘到了<code>npm-check</code>，然后琢磨了一下，结合<code>cnpm</code>构建了一个本人很满意的包更新环境。遂决定写一篇博文，分享给大家。
 阅读本文需要一定<code>node</code>,<code>npm</code>,<code>webpack</code>基础（不高，挺低 &lt;(￣ˇ￣)/）
 本文为我个人理解，一家之言，如有不当或错误的地方欢迎大家指正，谢谢！
 <code>简书</code>：<a href="http://www.jianshu.com/p/0caedbe65339" target="_blank" rel="external">模块管理进阶 — npm-check + cnpm 构建完美包更新环境</a>
 <code>SegmentFault</code>：<a href="https://segmentfault.com/a/1190000011085967" target="_blank" rel="external">npm模块管理进阶 — npm-check + cnpm 构建完美的包更新环境</a></p>
-<h1>1.<a href="https://www.npmjs.com/package/npm-check" target="_blank" rel="external"> npm-check</a></h1>
+<h1 id="1-npm-check">1.<a href="https://www.npmjs.com/package/npm-check" target="_blank" rel="external"> npm-check</a></h1>
 <p><code>npm</code> 是node下的包管理工具，给我们提供了强大的包管理功能，简化了项目的代码部署过程。但是，<code>npm</code>也不是尽善尽美，批量更新时便很捉急。
 <code>npm-check</code>便应运而生。
 <code>npm-check</code>是一个<code>npm</code>包更新工具。它还可以检查项目的<code>npm</code>依赖包是否有更新，缺失，错误以及未使用等情况。其 几大主要优势如下：
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">提供图形化界面，还有emoji，点个赞（不用对着黑白界面简直良心啊！我也想用emoji写啊！:-)）</div><div class="line">批量更新依赖包，还兼职检测包使用情况</div><div class="line">项目下更新支持自动检测包的 &quot;dependencies&quot; 和&quot;devDependencies&quot;并更新&quot;package.json&quot;信息</div></pre></td></tr></table></figure></p>
 <p><img src="/images/articles/npm-check-cnpm/npm-check-1.png" alt="npm-check"></p>
-<h2>1.1 <code>npm-check</code>安装</h2>
+<h2 id="1-1-npm-check安装">1.1 <code>npm-check</code>安装</h2>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; npm install -g npm-check //全局安装。项目下安装可自行选择</div><div class="line">&gt; npm install npm-check    //项目下安装，项目根目录执行</div></pre></td></tr></table></figure></p>
-<h2>1.2 <code>npm-check</code>项目依赖包更新</h2>
+<h2 id="1-2-npm-check项目依赖包更新">1.2 <code>npm-check</code>项目依赖包更新</h2>
 <p>（1）查看包更新信息，会有小黄脸提示你包的相关情况（需更新，缺失，错误以及未使用等）（表情包大牛。。。）
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; npm-check</div></pre></td></tr></table></figure></p>
 <p><img src="/images/articles/npm-check-cnpm/npm-check-2.png" alt="npm-check-2"></p>
@@ -218,24 +218,24 @@
 <p><img src="/images/articles/npm-check-cnpm/npm-check-3.gif" alt="npm-check-3"></p>
 <p>基础就是这样，下面是<code>npm-check</code>指令列表:</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-u, --update       显示一个交互式UI，用于选择要更新的模块，并自动更新&quot;package.json&quot;内包版本号信息</div><div class="line">-g, --global       检查全局下的包</div><div class="line">-s, --skip-unused  忽略对未使用包的更新检查</div><div class="line">-p, --production   忽略对&quot;devDependencies&quot;下的包的检查</div><div class="line">-d, --dev-only     忽略对&quot;dependencies&quot;下的包的检查</div><div class="line">-i, --ignore       忽略对指定包的检查.</div><div class="line">-E, --save-exact   将确切的包版本存至&quot;package.json&quot;(注意，此命令将存储&apos;x.y.z&apos;而不是&apos;^x.y.z&apos;)</div></pre></td></tr></table></figure></p>
-<h2>1.3 <code>npm-check</code>的问题</h2>
+<h2 id="1-3-npm-check的问题">1.3 <code>npm-check</code>的问题</h2>
 <p><code>npm-check</code>更新包时是根据版本号动态生成更新语句并执行。其本质是仍然<code>npm install</code>指令：</p>
 <p><img src="/images/articles/npm-check-cnpm/npm-check-4.png" alt="npm-check-4"></p>
 <p>所以，问题不是<code>npm install</code>，而是国内的问题。介于网络等因素，国内用户更倾向于使用<code>cnpm</code>,<code>cnpm</code>也比较稳定和快速。
 下面就介绍如何使用让<code>npm-check</code>使用<code>cnpm</code>执行更新。</p>
-<h1>3.<code>npm-check</code> + <code>cnpm</code></h1>
+<h1 id="3-npm-check-cnpm">3.<code>npm-check</code> + <code>cnpm</code></h1>
 <p><a href="https://cnpmjs.org/" target="_blank" rel="external">cnpm</a> 是阿里提供的一个完整 <a href="https://www.npmjs.com/" target="_blank" rel="external">npmjs.org</a> 镜像，便于国内用户使用<code>npm</code>。这里就不过多赘述了。
 准备:安装好<code>cnpm</code>,<code>npm-check</code>
 本文将介绍两种方法将<code>cnpm</code>加入<code>npm-check</code>，以及其原理，具体如下。</p>
 <hr>
-<h2>3.1 两种方法简述</h2>
+<h2 id="3-1-两种方法简述">3.1 两种方法简述</h2>
 <p><strong>1. 源码修改法</strong></p>
 <p>(1) 找到<code>npm-check</code>包下的<code>&quot;npm-check\lib\&quot;</code>和<code>&quot;npm-check\lib-es5\&quot;</code>下的<code>cli.js</code>文件。
 (2) 对文件内代码<code>&quot;options&quot;</code>的属性<code>&quot;installer&quot;</code>进行修改：
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">installer: process.env.NPM_CHECK_INSTALLER || &apos;npm&apos;  //改前</div><div class="line">installer: process.env.NPM_CHECK_INSTALLER || &apos;cnpm&apos; //改后</div></pre></td></tr></table></figure></p>
 <p><strong>2.修改环境变量值</strong>
 将<code>NPM_CHECK_INSTALLER</code>设为<code>cnpm</code>。后文将介绍三种修改方法，效果有些差别。</p>
-<h2>3.2 两种方法原理</h2>
+<h2 id="3-2-两种方法原理">3.2 两种方法原理</h2>
 <p><strong>1. 源码修改法</strong></p>
 <p><code>npm-check</code>目录结构如下。一眼就看见<code>&quot;./lib&quot;</code>和<code>&quot;./lib-es5&quot;</code>目录结构完全相同，是有什么原因吗？没错，后面看了各位就明白了。
 <img src="/images/articles/npm-check-cnpm/npm-check-5.png" alt="npm-check-5"></p>
@@ -298,10 +298,10 @@
 <p>在句首加上<code>cross-env</code>即可，执行时<code>cross-env</code>会对指令进行处理。
 注意：
 <strong>使用<code>cross-env</code>时使用<code>&amp;&amp;</code>会改变前后语句环境</strong>，即每一语句段都有自己的环境，即环境变量设置会失效。慎用<code>&amp;&amp;</code>。</p>
-<h1>4.总结</h1>
+<h1 id="4-总结">4.总结</h1>
 <p>本文首先简单介绍了<code>npm-check</code>及其用法，然后介绍了如何结合<code>cnpm</code>进行<code>cnpm install</code>以及方法的原理。
 至此，结合了<code>npm-check</code>模块更新工具和<code>cnpm</code>国内镜像，在模块更新的操作和速度上都已获得提升，模块更新环境搭建完毕！</p>
-<h1>5.后记</h1>
+<h1 id="5-后记">5.后记</h1>
 <p>断断续续写了也快一天了，写完之后校对，一下子都快1点钟了，感觉还在早上刚开始写的时候一样。总算是写完了这篇博文。
 其实这是我第一篇正式意义上的博文，莫名地感觉有种莫名的感觉，写完之后还有点不舍..W(￣_￣)W，但总归是完成了自己的写作，还是很开心的！
 初次写作，还有许多遗憾的地方未能做好，甚是可惜。特别是看了<code>npm-check</code>后，自己特别想用几个小黄脸表情:-)！ 但是不支持啊啊啊啊！憾
@@ -356,7 +356,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">1. npm-check</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">1.1 npm-check安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">1.2 npm-check项目依赖包更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">1.3 npm-check的问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">3.npm-check + cnpm</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">3.1 两种方法简述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">3.2 两种方法原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">4.总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">5.后记</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-npm-check"><span class="toc-text">1. npm-check</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-npm-check安装"><span class="toc-text">1.1 npm-check安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-npm-check项目依赖包更新"><span class="toc-text">1.2 npm-check项目依赖包更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-npm-check的问题"><span class="toc-text">1.3 npm-check的问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-npm-check-cnpm"><span class="toc-text">3.npm-check + cnpm</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-两种方法简述"><span class="toc-text">3.1 两种方法简述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-两种方法原理"><span class="toc-text">3.2 两种方法原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-总结"><span class="toc-text">4.总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-后记"><span class="toc-text">5.后记</span></a></li></ol>
                 </div>
             </div>
         </div>
