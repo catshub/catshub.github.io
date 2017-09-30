@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="个人博客记 —— Github pages 绑定个人域名 - xqone blog">
-    <meta name="keywords" content="blog domain 绑定域名">
+    <meta name="description" content="xqone blog 客户端识别之用户代理检测——navigator.userAgent">
+    <meta name="keywords" content="html  javascript userAgent navigator">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        个人博客记 —— Github pages 绑定个人域名｜XQONE&#39;s Blog
+        客户端检测之用户代理检测——navigator.userAgent｜XQONE&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="https://xqone.github.io/2017/09/16/github-domainName/">
+    <link rel="canonical" href="https://xqone.github.io/2017/09/30/userAgent/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -131,13 +131,13 @@
 <!--only post-->
 
 
-<img class="wechat-title-img" src="/images/articles/github-domain/bg.png">
+<img class="wechat-title-img" src="/images/articles/userAgent/bg.png">
 
 
 <style>
     
     header.intro-header {
-        background-image: url('/images/articles/github-domain/bg.png');
+        background-image: url('/images/articles/userAgent/bg.png');
     }
 
     
@@ -148,24 +148,24 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>个人博客记 —— Github pages 绑定个人域名</h1>
+                    <h1>客户端检测之用户代理检测——navigator.userAgent</h1>
                     
                     <span class="meta">
                          作者 XQONE
                         <span>
-                          日期 2017-09-16
+                          日期 2017-09-30
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#blog"
-                           title="blog">blog</a>
-                        
                         <a class="tag" href="/tags/#原创"
                            title="原创">原创</a>
                         
-                        <a class="tag" href="/tags/#github"
-                           title="github">github</a>
+                        <a class="tag" href="/tags/#JavaScript"
+                           title="JavaScript">JavaScript</a>
+                        
+                        <a class="tag" href="/tags/#html"
+                           title="html">html</a>
                         
                     </div>
                 </div>
@@ -174,7 +174,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            个人博客记 —— Github pages 绑定个人域名
+            客户端检测之用户代理检测——navigator.userAgent
         </span>
     </div>
 </header>
@@ -186,43 +186,13 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <h1>前言</h1>
-<p>近日搭建了自己的 <code>Blog</code>，使用的是 <code>Hexo</code> + <code>github pages</code>。众所周知，<code>github pages</code>的域名都是统一的<code>your_name.github.io</code>。想了想，能不能换个域名呢？当然是可以滴。
-于是，在度娘了之后，也算找到了方法。但是网上的介绍都是操作流程，没有详细的解释，我自己也是有些迷糊。好在域名绑定成功了。遂决定写一篇博文分享一下自己对这个过程的理解。
-请自行准备：个人的 <code>github pages</code>，个人域名。
-<code>简书</code>：<a href="http://www.jianshu.com/p/cd0b80f7f1c4" target="_blank" rel="external">个人博客记 —— Github pages 绑定个人域名</a>
-<code>SegmentFault</code>：<a href="https://segmentfault.com/a/1190000011203711" target="_blank" rel="external">个人博客记 —— Github pages 绑定个人域名</a></p>
-<h1>简述</h1>
-<p>绑定域名需要在 <strong>域名解析服务商</strong> 和 <strong><code>github</code></strong> 两边都进行操作。</p>
-<ol>
-<li>在域名解析服务商进行个人域名解析，将域名绑定到个人 <code>github pages</code>。</li>
-<li>同时在 <code>github pages</code> 需要配置 <code>CNAME</code> 文件将网站重定向到你的域名。</li>
-</ol>
-<h1>1.域名解析配置</h1>
-<p>简单点说就是将域名和IP或其他域名进行绑定，让你能通过不同域名访问同一个网站。
-解析商不多说，<code>DNSPod</code>、<code>阿里云</code>、<code>腾讯云</code>等等。一般国内域名购买商都同时提供解析服务。我使用的是<code>腾讯云</code>买的域名 <code>xhuyq.me</code> ，就用腾讯云解析了。</p>
-<p><strong>注：以下过程为通用版本，非具体解析商的操作过程。</strong></p>
-<p>首先找到域名管理，选择域名解析功能。<code>记录类型</code>（如图提示），我们选择 <code>A记录</code> 或者 <code>CNAME</code> 就可以了。接下里就是域名解析的几个要点：</p>
-<p><img src="/images/articles/github-domain/domain-1.png" alt="domain-1"> <img src="/images/articles/github-domain/domain-2.png" alt="domain-2"></p>
-<p>(1) <code>A记录</code> 类型 <code>记录值</code>填写 <code>IP</code> 值，两种选择：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; 你的 `github.io` 的 `IP` 值</div><div class="line">&gt; 在官方提供的两个 `IP` 中选择 `192.30.252.153`、`192.30.252.154`</div></pre></td></tr></table></figure></p>
-<p>(2) <code>CNAME</code>类型 （如图提示），请选好<code>主机记录</code>，按<code>主机记录</code>类型填写记录值。推荐选择的 <code>@</code> ，那么<code>记录值</code>就填写按各位<code>github</code>名填写<code>your_name.github.io</code>就好了。</p>
-<h1>2.<code>github pages</code> 方面的 <code>CNAME</code> 文件配置</h1>
-<p>（1）在<code>github</code>的<code>github pages</code>的仓库根目录里加上<code>CNAME</code>文件，里面写上个人域名即可。我的是：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhuyq.me</div></pre></td></tr></table></figure></p>
-<p>（2）或者直接在<code>github.io</code>仓库的<code>Settings</code>的<code>GitHub Pages</code>项直接设置<code>Custom domain</code>,<code>github</code>会自动添加<code>CNAME</code>文件:</p>
-<p><img src="/images/articles/github-domain/domain-3.png" alt="domain-3"></p>
-<h1>3.个人理解</h1>
-<p>那么，为什么配置了域名解析还要配置<code>CNAME</code> 文件呢？
-实际上，<code>个人域名</code>是<code>名字</code>，<code>github pages</code>相当于<code>网站空间</code>。试想，如果不在<code>网站空间</code>配置<code>CNAME</code>，就可以成功绑定域名，那么岂不是可以给别随便一个的网站绑定上自己的域名？相同，如果只需配置<code>github pages</code>的<code>CNAME</code>，而不用<code>域名解析</code>，那不是也可以将自己的网站绑在别人的域名上？
-<strong>所以，域名绑定是需要<code>“双方同意”</code>的。</strong>
-如有不当，万望指正！</p>
-<p>&lt;!-- blog --&gt;</p>
-<p>&lt;!-- local --&gt;
-&lt;!--
-<a href="/images/articles/github-domain/domain-1.png">1</a>: ../images/articles/github-domain/domain-1.png
-<a href="/images/articles/github-domain/domain-2.png">2</a>: ../images/articles/github-domain/domain-2.png
-<a href="/images/articles/github-domain/domain-3.png">3</a>: ../images/articles/github-domain/domain-3.png
---&gt;</p>
+<p>前端这东西，各种先有事实后有标准😐。不管是各大浏览器老哥各自为政，还是w3c姗姗来迟，既有事实标准难以更改。虽说多方割据，互相竞争，总比一家独大，爱更不更来得好。但却苦了我们这些平头小码农🙄，颈椎病又加深了啊🐒。<br>
+槽不多吐，开始正文！</p>
+<h1>客户端检测</h1>
+<p>面对各浏览器普遍存在的不一致性问题，开发人员久的利用各种客户端检测方法，来突破或规避各种局限性。检测Web客户端的手段很多，各有利弊。<br>
+在服务器端，<code>用户代理检测</code>是一种常用且广为接收的做法。通过对浏览器发送的用户代理字符串的内容进行检测，来确定具体的浏览器。</p>
+<h1>navigator.userAgent</h1>
+<p>BOM，即浏览器对象模型，提供了很多对象，用于访问浏览器的功能，且与网内内容无关。其主要方面已被w3c加入HTML5豪华套餐。BOM包含<code>window</code>、<code>location</code>、<code>navigator</code>、<code>screen</code>、<code>history</code>对象，<code>navigator</code>对象中的<code>userAgent</code>属性便是用户代理字符串。</p>
 
 
                 <hr>
@@ -230,7 +200,7 @@
                 <p style="color:#DB4646;background:rgba(0,0,0,0.1);padding:10px 15px;font-size:0.8em">
                     <strong>
                         原创文章，如需转载，希望注明出处：<br />
-                        转自 XQONE&#39;s Blog：个人博客记 —— Github pages 绑定个人域名 — http://xhuyq.me/2017/09/16/github-domainName/
+                        转自 XQONE&#39;s Blog：客户端检测之用户代理检测——navigator.userAgent — http://xhuyq.me/2017/09/30/userAgent/
                     </strong>
                 </p>
                 
@@ -238,20 +208,15 @@
                 <ul class="pager">                    
                      <!-- 其实是前一篇 -->
                     <li class="previous">
-                        <a href="/2017/09/14/huawei/" data-toggle="tooltip" data-placement="top"
-                           title="华为2018届校招技术岗笔试题及个人解答">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
                         <a href="/2017/09/27/relative-in-flow/" data-toggle="tooltip" data-placement="top"
-                            title="CSS中"position:relative"属性与文档流的确切关系">Next Post &rarr;</a>
+                           title="CSS中"position:relative"属性与文档流的确切关系">&larr; Previous Post</a>
                     </li>
+                    
                     
                 </ul>
 
                 <!--PC和WAP自适应版--><!-- 畅言评论 -->
-                <div id="SOHUCS" sid="2017091601" ></div> 
+                <div id="SOHUCS" sid="2017093001" ></div> 
                 <script type="text/javascript"> 
                 (function(){ 
                 var appid = 'cytdtTi7J'; 
@@ -272,7 +237,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">简述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">1.域名解析配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">2.github pages 方面的 CNAME 文件配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">3.个人理解</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">客户端检测</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">navigator.userAgent</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -294,14 +259,14 @@
                     </h5>
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#blog"
-                           title="blog">blog</a>
-                        
                         <a class="tag" href="/tags/#原创"
                            title="原创">原创</a>
                         
-                        <a class="tag" href="/tags/#github"
-                           title="github">github</a>
+                        <a class="tag" href="/tags/#JavaScript"
+                           title="JavaScript">JavaScript</a>
+                        
+                        <a class="tag" href="/tags/#html"
+                           title="html">html</a>
                         
                     </div>
                 </section>
