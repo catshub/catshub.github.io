@@ -84,14 +84,14 @@
                         
                     
                         
-                    
-                        
 							
                         <li>
                             <a href="/tags/">TAGS</a>
                         </li>
 							
 						
+                    
+                        
                     
 					
 					
@@ -190,30 +190,23 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <h1 id="正文">正文</h1>
-<p>近期遇到一个问题——<code>&quot;position:relative&quot;</code>到底会不会导致元素脱离文档流？主流观点是不会，但都给不出一个有说服力的论据。最后我自己佐证了一番，总算有了个结果：
-<strong><code>&quot;position:relative&quot;</code>不会导致元素脱离文档流</strong>。
-<code>简书</code>：<a href="http://www.jianshu.com/p/5dfa4d41558d" target="_blank" rel="external">CSS中&quot;position:relative&quot;属性与文档流的关系</a>
-<code>SegmentFault</code>：<a href="https://segmentfault.com/a/1190000011395218" target="_blank" rel="external">CSS中&quot;position:relative&quot;属性与文档流的关系</a>
-<code>&quot;relative&quot;</code>与文档流
-==
-说到标准，最权威的自然莫过于<code>CSS标准文档</code>。经过一番繁琐的查找之后（w3c网站找东西是真的累。。。），终于被我找到了。文档中<code>&quot;positioning-scheme&quot;</code>一节写道：
+<p>近期遇到一个问题——<code>&quot;position:relative&quot;</code>到底会不会导致元素脱离文档流？主流观点是不会，但都给不出一个有说服力的论据。最后我自己佐证了一番，总算有了个结果：<br>
+<strong><code>&quot;position:relative&quot;</code>不会导致元素脱离文档流</strong>。<br>
+<code>简书</code>：<a href="http://www.jianshu.com/p/5dfa4d41558d" target="_blank" rel="external">CSS中&quot;position:relative&quot;属性与文档流的关系</a><br>
+<code>SegmentFault</code>：<a href="https://segmentfault.com/a/1190000011395218" target="_blank" rel="external">CSS中&quot;position:relative&quot;属性与文档流的关系</a></p>
+<h1 id="relative-与文档流"><code>&quot;relative&quot;</code>与文档流</h1>
+<p>说到标准，最权威的自然莫过于<code>CSS标准文档</code>。经过一番繁琐的查找之后（w3c网站找东西是真的累。。。），终于被我找到了。文档中<code>&quot;positioning-scheme&quot;</code>一节写道：<br>
 <img src="/images/articles/relative-in-flow/relative-1.png" alt="relative-in-flow">
-链接：https://www.w3.org/TR/CSS22/visuren.html#positioning-scheme
+链接：https://www.w3.org/TR/CSS22/visuren.html#positioning-scheme<br>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">An element is called out of flow <span class="keyword">if</span> it is floated, absolutely positioned, or is the root element. An element is called <span class="keyword">in</span>-flow <span class="keyword">if</span> it is not out-of-flow.</div></pre></td></tr></table></figure></p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">当元素是浮动，绝对定位或者根元素时，元素被称为&quot;流外元素&quot;，否则被称为&quot;流内元素&quot;。</div></pre></td></tr></table></figure></p>
-<p>很明显，<code>&quot;position:relative&quot;</code>的元素仍在文档流中。
-另外，推荐下一个人认为不错的文章：
+<p>很明显，<code>&quot;position:relative&quot;</code>的元素仍在文档流中。<br>
+另外，推荐下一个人认为不错的文章：<br>
 <a href="http://www.cnblogs.com/chuaWeb/p/html_css_position_float.html" target="_blank" rel="external">html/css基础篇——DOM中关于脱离文档流的几种情况分析</a></p>
 <h1 id="后记">后记</h1>
-<p>关于这个问题，还有我个人的因素。前几天，我面试了某公司前端职位。面试官呢，是一位对面试回答要求达到背书级准确的人，认为自己的观点是绝对正确的，对我的观点嗤之以鼻。本人呢，对自己的观点也很坚持，故而就一些问题有些争执。当然，因为面试，我也有妥协，所以最后都是我被面试官各种教育“这个才是对的”，感觉很憋屈。
-其中最后一个问题便是<code>&quot;position:relative&quot;</code>是否会导致元素脱离文档流。我认为不会，面试官认为会，因为之前的压抑，所以这个问题我有些固执（没有商量余地，有些受不了），最后还是被教育了。。。并被面试官一句“那就到这里吧”结束了面试。
-之后，自己各方求证，但结果大多都没有靠谱的依据。最后总算是解决了这个问题，写篇博文发泄发泄哈哈。
-&lt;!-- blog --&gt;</p>
-<p>&lt;!-- local --&gt;
-&lt;!--
-<a href="/images/articles/relative-in-flow/relative-1.png">1</a>: ../images/articles/relative-in-flow/relative-1.png
-<a href="http://www.cnblogs.com/chuaWeb/p/html_css_position_float.html" target="_blank" rel="external">2</a>: http://www.cnblogs.com/chuaWeb/p/html_css_position_float.html
---&gt;</p>
+<p>关于这个问题，还有我个人的因素。前几天，我面试了某公司前端职位。面试官呢，是一位对面试回答要求达到背书级准确的人，认为自己的观点是绝对正确的，对我的观点嗤之以鼻。本人呢，对自己的观点也很坚持，故而就一些问题有些争执。当然，因为面试，我也有妥协，所以最后都是我被面试官各种教育“这个才是对的”，感觉很憋屈。<br>
+其中最后一个问题便是<code>&quot;position:relative&quot;</code>是否会导致元素脱离文档流。我认为不会，面试官认为会，因为之前的压抑，所以这个问题我有些固执（没有商量余地，有些受不了），最后还是被教育了。。。并被面试官一句“那就到这里吧”结束了面试。<br>
+之后，自己各方求证，但结果大多都没有靠谱的依据。最后总算是解决了这个问题，写篇博文发泄发泄哈哈。</p>
 
 
                 <hr>
@@ -263,7 +256,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-text">正文</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-text">后记</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-text">正文</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#relative-与文档流"><span class="toc-text">"relative"与文档流</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-text">后记</span></a></li></ol>
                 </div>
             </div>
         </div>
