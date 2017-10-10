@@ -40,6 +40,13 @@ footer {
     width: 1170px;
 }
 }
+/* xq-footer-mobile 移动端底部宽度限制 */
+@media (max-width: 767px) {
+    .xq-footer-mobile{
+        margin:0 auto;
+        width:200px;
+    }
+}
 .container .toc-wrap .toc-level-2 > a {
     color: #0085a1;
 }
