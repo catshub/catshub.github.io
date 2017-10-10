@@ -70,6 +70,15 @@
 </style>
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
+<!-- particles 粒子背景效果
+
+  <script src="/js/particles.min.js"></script>
+  <div id="particles" style="position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1"></div>
+  <script src="/js/particles.js"></script>
+
+
+ -->
+
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
 " data-ishome = "false" >
@@ -198,17 +207,17 @@
             <!-- 标签云 -->
             <div id='tag_cloud' class="tags">
                 
-                <a href="#blog" title="blog" rel="2">blog</a>
-                
                 <a href="#原创" title="原创" rel="4">原创</a>
+                
+                <a href="#github" title="github" rel="1">github</a>
+                
+                <a href="#blog" title="blog" rel="2">blog</a>
                 
                 <a href="#笔试" title="笔试" rel="1">笔试</a>
                 
                 <a href="#JavaScript" title="JavaScript" rel="2">JavaScript</a>
                 
                 <a href="#node" title="node" rel="2">node</a>
-                
-                <a href="#github" title="github" rel="1">github</a>
                 
                 <a href="#npm-check" title="npm-check" rel="1">npm-check</a>
                 
@@ -223,23 +232,9 @@
             <!-- 标签列表 -->
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="blog">
-                    <span class="tag-text">blog</span>
+                <span class="fa fa-tag listing-seperator" id="原创">
+                    <span class="tag-text">原创</span>
                 </span>
-                
-                <div class="post-preview">
-                    <a href="/2017/09/08/hello-world/">
-                        <h2 class="post-title">
-                            Hello World
-                        </h2>
-                        
-                        <h3 class="post-subtitle">
-                            😄
-                        </h3>
-                        
-                    </a>
-                </div>
-                <hr>
                 
                 <div class="post-preview">
                     <a href="/2017/09/16/github-domainName/">
@@ -250,13 +245,6 @@
                     </a>
                 </div>
                 <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="原创">
-                    <span class="tag-text">原创</span>
-                </span>
                 
                 <div class="post-preview">
                     <a href="/2017/09/14/huawei/">
@@ -267,16 +255,6 @@
                         <h3 class="post-subtitle">
                             语言：JavaScript
                         </h3>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/2017/09/16/github-domainName/">
-                        <h2 class="post-title">
-                            个人博客记 —— Github pages 绑定个人域名
-                        </h2>
                         
                     </a>
                 </div>
@@ -301,6 +279,54 @@
                         <h2 class="post-title">
                             CSS中"position:relative"属性与文档流的确切关系
                         </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="github">
+                    <span class="tag-text">github</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2017/09/16/github-domainName/">
+                        <h2 class="post-title">
+                            个人博客记 —— Github pages 绑定个人域名
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="blog">
+                    <span class="tag-text">blog</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2017/09/16/github-domainName/">
+                        <h2 class="post-title">
+                            个人博客记 —— Github pages 绑定个人域名
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+                <div class="post-preview">
+                    <a href="/2017/09/08/hello-world/">
+                        <h2 class="post-title">
+                            Hello World
+                        </h2>
+                        
+                        <h3 class="post-subtitle">
+                            😄
+                        </h3>
                         
                     </a>
                 </div>
@@ -392,23 +418,6 @@
                         <h3 class="post-subtitle">
                             npm模块管理进阶
                         </h3>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="github">
-                    <span class="tag-text">github</span>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/2017/09/16/github-domainName/">
-                        <h2 class="post-title">
-                            个人博客记 —— Github pages 绑定个人域名
-                        </h2>
                         
                     </a>
                 </div>
@@ -516,8 +525,16 @@
 <footer>
     <div class="container"> <!--  -->
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <br>
+            <!-- 粒子背景效果 -->
+            
+            <script src="/js/particles.min.js"></script>
+            <div id="particles"></div>
+            <script src="/js/particles.js"></script>
+            
+            <!-- 粒子背景效果 -->
+
+            <div class="col-lg-2 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 col-lg-offset-5 col-md-4 col-md-offset-4 text-center">
+               
                 <ul class="list-inline text-center">
 
                 <!-- ######### xq sns -->
@@ -556,7 +573,7 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; XQONE 2017
+                    Copyright &copy; XQONE
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -630,14 +647,6 @@
 </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<!-- particles 粒子背景效果 -->
-
-  <script src="/js/particles.min.js"></script>
-  <div id="particles" style="position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1"></div>
-  <script src="/js/particles.js"></script>
-
-
 
 
 <!--wechat title img-->

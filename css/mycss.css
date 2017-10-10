@@ -18,7 +18,9 @@ body {
 footer {
     font-size: 20px;
     padding: 0;
-    margin:20px auto;
+    margin:40px auto 20px;
+    position: relative;
+    z-index: -1;
 }
 footer .container{
     margin:0;
@@ -62,3 +64,9 @@ footer {
 /* .list-inline .xq-sns-li .xq-sns-img:hover{
     box-shadow:0 2px 1px 1px #DFDEDE;
 } */
+
+#particles {
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    /* z-index:-1 */
+}
