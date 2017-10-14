@@ -126,10 +126,6 @@
 							
 						
                     
-                        
-                    
-                        
-                    
 					
 					
                 </ul>
@@ -328,7 +324,7 @@
      style="background-image: url('/images/articles/bili/bg.png')">
     <a href="/2017/10/13/bili/">
         <h2 class="post-title">
-            哔哩哔哩2018校招前端笔试
+            哔哩哔哩2018校招前端笔试（暂）
         </h2>
         <p class="post-meta">
             <i class="fa fa-calendar" aria-hidden="true"></i> 2017-10-13
