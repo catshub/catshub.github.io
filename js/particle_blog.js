@@ -1,4 +1,4 @@
-particlesJS("particles", {
+particlesJS("particle_blog", {
     "particles": {
         "number": {
             "value": 100,
