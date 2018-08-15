@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+    <!-- 
+    /////////////////////////////////////////////////////////////////
+    //                            _oOo_                            //
+    //                           o88888o                           //
+    //                          88" . "88                          //
+    //                         (|  ^_^  |)                          //
+    //                         O \  =  / O                          //
+    //                       ____/`---'\____                       //
+    //                     .'  \\|     |//  `.                     //
+    //                    /  \\|||  :  |||//  \                    //
+    //                   /  _||||| -:- |||||-  \                   //
+    //                   |   | \\\  -  /// |   |                   //
+    //                   | \_|  ''\---/''  |   |                   //
+    //                   \  .-\__  `-`  ___/-. /                   //
+    //                 ___`. .'  /--.--\  `. . ___                 //
+    //               ."" '< `.___\_<|>_/___.'  >'"".               //
+    //             | | :  `- \`.;`\ _ /`;.`/ - ` : | |             //
+    //             \  \ `-.   \_ __\ /__ _/   .-` /  /             //
+    //       =======`-.____`-.___\_____/___.-`____.-'=======       //
+    //                           `=---='                           //
+    //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^      //
+    //                    佛祖保佑        永无BUG                   //
+    //                    阿弥陀佛         佑我XY                   //
+    /////////////////////////////////////////////////////////////////
+     -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="xqone blog bilibili 笔试">
+    <meta name="keywords" content="xqone blog bilibili 笔试">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="/images/static/x-logo.png">
+    <link rel="alternate" type="application/atom+xml" title="XiongQi" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        哔哩哔哩2018校招前端笔试｜XiongQi&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://xiongqi-xq.github.io/2017/10/13/bili/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- mycss -->
+    <link rel="stylesheet" href="/css/mycss.css">
+</head>
+
+<style>
+    header.intro-header {
+        background-image: url('/images/static/bgY.png')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    XiongQi
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+						
+                    
+                        
+							
+								
+							
+						
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+							
+                        <li>
+                            <a href="/tags/">TAGS</a>
+                        </li>
+							
+						
+                    
+					
+					
+						<li>
+							<a href="/about">About</a>
+						</li>
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img" src="/images/articles/bili/bg.png">
+
+
+
+    <style>
+    header.intro-header {
+        background-image: url('/images/articles/bili/bg.png');
+    }
+    </style>
+    
+
+<header class="intro-header">
+    <div class="container">
+
+            <!-- 粒子博文专用 -->
+             <!-- 粒子博文专用 -->
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>哔哩哔哩2018校招前端笔试</h1>
+                    
+                    <span class="meta">
+                         作者 XiongQi
+                        <span>
+                          日期 2017-10-13
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#原创"
+                           title="原创">原创</a>
+                        
+                        <a class="tag" href="/tags/#笔试"
+                           title="笔试">笔试</a>
+                        
+                        <a class="tag" href="/tags/#JavaScript"
+                           title="JavaScript">JavaScript</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            哔哩哔哩2018校招前端笔试
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article class="container xqpostback">
+    <div>
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="前言">前言</h1>
+<p>前几日，哔哩哔哩在电子科大清水河校区举行了校招宣讲会。B站不用多说，中国最大的同性交友网站😄，不去工作也能去看看。<br>
+当晚便进行了部分笔试，下面是我参加的前端笔试试题和我自己的解答，分享给大家。</p>
+<h2 id="第一题">第一题</h2>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">给定一个整数数组，找到具有最大和的子数组，返回最大和。</span><br></pre></td></tr></table></figure></p>
+<p>比较常见，直接给我的解答：
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//全为负数的情况，要注意</span></span><br><span class="line">    <span class="keyword">if</span> (arr.every(<span class="function"><span class="params">x</span> =&gt;</span> x &lt; <span class="number">0</span>)) &#123;</span><br><span class="line">        <span class="keyword">return</span> arr.sort()[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> arr) &#123;</span><br><span class="line">        sum += i;</span><br><span class="line">        <span class="keyword">if</span> (max &lt; sum)</span><br><span class="line">            max = sum;</span><br><span class="line">        <span class="keyword">if</span> (sum &lt; <span class="number">0</span>)</span><br><span class="line">            sum = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br></pre></td></tr></table></figure></p>
+<h2 id="第二题">第二题</h2>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">要求:</span><br><span class="line">1. 构建一个n*n的格子(n从输入框填写) ,默认背景色都是白色,鼠标指针指上去的格子底色要变</span><br><span class="line">成红色,鼠标移出时复原</span><br><span class="line">2. 鼠标点击格子时背景色固定为蓝色,指针hover时也不变红。再次点击时复原成未点击的状态</span><br><span class="line">3. 格子大小可用css控制,底色变化用js实现</span><br></pre></td></tr></table></figure></p>
+<p>个人思路如下：</p>
+<h3 id="1-创建n-n的表格">1. 创建n*n的表格</h3>
+<p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"in"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"输入n"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"createTable()"</span>&gt;</span>确认n<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- css --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">td&#123;</span></span><br><span class="line"><span class="undefined">	width:20px;</span></span><br><span class="line"><span class="undefined">	height:20px;</span></span><br><span class="line"><span class="undefined">	border:1px solid;		</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- js --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="comment">// 创建n*n表格</span></span></span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">createTable</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> n=<span class="built_in">document</span>.getElementById(<span class="string">"in"</span>).value;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="comment">//创建n*n的"table"</span></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> str=<span class="string">"&lt;tbody&gt;"</span>;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span></span><br><span class="line"><span class="javascript">		str+=<span class="string">"&lt;tr&gt;"</span>;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span></span><br><span class="line"><span class="xml">			str+="<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>";</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="javascript">		str+=<span class="string">"&lt;/tr&gt;"</span>;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="javascript">	str += <span class="string">"&lt;/tbody&gt;"</span>;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> table = <span class="built_in">document</span>.createElement(<span class="string">"table"</span>);</span></span><br><span class="line"><span class="undefined">	table.innerHTML = str;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">	table.setAttribute(<span class="string">"cellspacing"</span>, <span class="number">0</span>);<span class="comment">//消除表格间的间距</span></span></span><br><span class="line"><span class="javascript">	<span class="built_in">document</span>.body.appendChild(table);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="comment">//调用事件函数，传入表格</span></span></span><br><span class="line"><span class="undefined">	colorEvent(table);</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="2-颜色变化效果">2. 颜色变化效果</h3>
+<p>使用事件委托。
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="comment">//mouseover与mouseout</span></span></span><br><span class="line"><span class="javascript"><span class="comment">//不论鼠标指针穿过被选元素或其子元素，都会触发与mouseout。</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="comment">//mouseenter与mouseleave</span></span></span><br><span class="line"><span class="javascript"><span class="comment">//只有在鼠标指针离开被选元素时，才会触发与mouseout。</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">colorEvent</span>(<span class="params">table</span>) </span>&#123;	</span></span><br><span class="line"><span class="javascript">	<span class="comment">//指针hover，out以及click监听</span></span></span><br><span class="line"><span class="javascript">	table.addEventListener(<span class="string">"mouseover"</span>, colorHover, <span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript">	table.addEventListener(<span class="string">"mouseout"</span>, colorOut, <span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript">	table.addEventListener(<span class="string">"click"</span>, colorClick, <span class="literal">false</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">colorHover</span>(<span class="params">ev</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> e = ev || <span class="built_in">window</span>.event;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> target = e.target || e.srcElement;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">if</span> (target.tagName == <span class="string">"TD"</span> &amp;&amp; target.style.background != <span class="string">"blue"</span>) &#123;</span></span><br><span class="line"><span class="javascript">			target.style.background = <span class="string">"red"</span>; <span class="comment">//注意"tagName"为大写，写小写"td"会失败</span></span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">colorOut</span>(<span class="params">ev</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> e = ev || <span class="built_in">window</span>.event;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> target = e.target || e.srcElement;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">if</span> (target.tagName == <span class="string">"TD"</span> &amp;&amp; target.style.background != <span class="string">"blue"</span>) &#123;</span></span><br><span class="line"><span class="javascript">			target.style.background = <span class="string">"white"</span>;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">colorClick</span>(<span class="params">ev</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> e = ev || <span class="built_in">window</span>.event;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> target = e.target || e.srcElement;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">if</span> (target.tagName == <span class="string">"TD"</span>) &#123;</span></span><br><span class="line"><span class="javascript">			target.style.background = (target.style.background == <span class="string">"blue"</span> ? <span class="string">"white"</span> : <span class="string">"blue"</span>);</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>其实此题如果使用<code>jQuery</code>会比较方便，其大致思路如下：
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	$(<span class="string">"#t"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		$(<span class="string">"#t"</span>).css(<span class="string">"background-color"</span>,<span class="string">"red"</span>);</span><br><span class="line">	&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		$(<span class="string">"#t"</span>).css(<span class="string">"background-color"</span>,<span class="string">"white"</span>);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-源代码">3. 源代码</h3>
+<p><a href="https://github.com/XQONE/xqone.github.io/blob/master/resources/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E7%AC%94%E8%AF%95%E7%AC%AC%E4%B8%89%E9%A2%98.html.code" target="_blank" rel="noopener">哔哩哔哩笔试第三题.html</a></p>
+<h2 id="第三题">第三题</h2>
+<p>此题为还原一张图上的设计，此处无图就不叙述了。</p>
+<h2 id="第四题">第四题</h2>
+<p>题目：高铁的玻璃需要有一定的防撞击强度,可以通过不同时速的铝弹撞击玻璃实际测试,可测出不会被击穿的最大时速。现在有两块强度未知的玻璃需要实验验证防撞击最大时速,假设不会被击穿时玻璃都完好无损可以继续实验使用, 一旦被击穿则不能继续使用。如何通过这两块玻璃,用尽量少的实验次数验证出防撞击的最大时速。(可以有微小误差,两块玻璃都可以被击穿)<br>
+题有点长，我的思路是使用类似于计算机网络拥塞控制的方法，使用<code>先指数增后线性增长</code>的方法。<br>
+（使用1,2,3表示时速等级，等级越高，时速越快）</p>
+<ol>
+<li>使用 <code>2^n</code> 级时速依次测试玻璃1（n=0,1,2...）。</li>
+<li>假设 <code>2^m</code> 级时速时穿过玻璃1，记录下当前的时速间隔：( 2<sup>(m-1),2</sup>m )。</li>
+<li>从 <code>2^(m-1)</code> 开始依次加1级测试玻璃2，直至测出最大时速。</li>
+</ol>
+
+
+                <hr>
+                <br />
+                <p style="color:#DB4646;background:rgba(0,0,0,0.1);padding:10px 15px;font-size:0.8em">
+                    <strong>
+                        原创文章，如需转载，希望注明出处：<br />
+                        转自 XiongQi&#39;s Blog：哔哩哔哩2018校招前端笔试 — https://xiongqi-xq.github.io/2017/10/13/bili/
+                    </strong>
+                </p>
+                
+
+                <ul class="pager">                    
+                     <!-- 其实是前一篇 -->
+                    <li class="previous">
+                        <a href="/2017/09/30/userAgent/" data-toggle="tooltip" data-placement="top"
+                           title="客户端检测之用户代理检测 — navigator.userAgent">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/10/19/particle/" data-toggle="tooltip" data-placement="top"
+                            title="本站粒子背景的嵌入心得(暂)">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!--PC和WAP自适应版--><!-- 畅言评论 -->
+                <div id="SOHUCS" sid="2017101301" ></div> 
+                <script type="text/javascript"> 
+                (function(){ 
+                var appid = 'cytdtTi7J'; 
+                var conf = 'prod_9fc3b119a1c297ac170810e7650696bc'; 
+                var width = window.innerWidth || document.documentElement.clientWidth; 
+                if (width < 960) { 
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+                <!-- 畅言评论 -->
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一题"><span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二题"><span class="toc-text">第二题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-创建n-n的表格"><span class="toc-text">1. 创建n*n的表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-颜色变化效果"><span class="toc-text">2. 颜色变化效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-源代码"><span class="toc-text">3. 源代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三题"><span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四题"><span class="toc-text">第四题</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#原创"
+                           title="原创">原创</a>
+                        
+                        <a class="tag" href="/tags/#笔试"
+                           title="笔试">笔试</a>
+                        
+                        <a class="tag" href="/tags/#JavaScript"
+                           title="JavaScript">JavaScript</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container"> <!--  style="background-color:rgba(255,255,255,0.7);border-radius:20px"  -->
+        <div class="row">
+            <!-- 粒子背景效果 -->
+            
+            <script src="/js/particles.min.js"></script>
+            <div id="particles"></div>
+            <script src="/js/particles.js"></script>
+            
+            <!-- 粒子背景效果 -->
+
+                <!-- xq-footer-mobile 移动端底部宽度限制 -->
+            <div class="xq-footer-mobile col-lg-2 col-sm-4 col-sm-offset-4 col-lg-offset-5 col-md-4 col-md-offset-4 text-center">
+
+                <ul class="list-inline text-center">
+
+                <!-- ######### xq sns -->
+                
+                    <li class="xq-sns-li">
+                        <a class="xq-sns-a" target="_blank" href="https://github.com/Xiongqi-XQ" >
+                            <image class="xq-sns-img" src="/images/static/github.png"></image>
+                        </a>
+                    </li>
+                
+                
+                    <li class="xq-sns-li">
+                        <a class="xq-sns-a" target="_blank" href="http://www.jianshu.com/u/9553d3f24baa" >
+                            <image class="xq-sns-img" src="/images/static/jianshu.png"></image>
+                        </a>
+                    </li>
+                
+                
+                    <li class="xq-sns-li">
+                        <a class="xq-sns-a" target="_blank" href="https://segmentfault.com/u/xiongqi" >
+                            <image class="xq-sns-img" src="/images/static/sf.png"></image>
+                        </a>
+                    </li>
+                
+                <!-- ######## xq sns -->
+
+                
+                
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; XiongQi
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    <!-- Theme by <a href="https://haojen.github.io/">Haojen Ma</a> -->
+                    Thanks For Reading
+                    <br>
+                    
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://xiongqi-xq.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!--wechat title img-->
+<!-- <img class="wechat-title-img" src="/images/static/head.png"> -->
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bilibili笔试</title>
+</head>
+
+<body>
+    <input id="in" type="number" placeholder="输入n">
+    <button onclick="createTable()">确认</button>
+    <br>
+    <br>
+
+    <!-- css -->
+    <style>
+        td {
+            width: 20px;
+            height: 20px;
+            border: 1px solid;
+        }
+    </style>
+    <script>
+        // 创建n*n表格
+        function createTable() {
+            var n = document.getElementById("in").value;
+
+            //创建n*n的"table"
+            var str = "<tbody>";
+            for (var i = 0; i < n; i++) {
+                str += "<tr>";
+                for (var j = 0; j < n; j++) {
+                    str += "<td></td>";
+                }
+                str += "</tr>";
+            }
+            str += "</tbody>";
+            var table = document.createElement("table");
+            table.innerHTML = str;
+
+            table.setAttribute("cellspacing", 0);//消除表格间的间距
+            table.setAttribute("id", "table");//"id"便于后续事件委托操作
+            document.body.appendChild(table);
+
+            //调用事件函数
+            colorEvent(table);
+        }
+    </script>
+
+    <script>
+        function colorEvent(table) {
+            //指针hover，out以及click监听
+            table.addEventListener("mouseover", colorHover, false);
+            table.addEventListener("mouseout", colorOut, false);
+            table.addEventListener("click", colorClick, false);
+
+            function colorHover(ev) {
+                var e = ev || window.event;
+                var target = e.target || e.srcElement;
+                if (target.tagName == "TD" && target.style.background != "blue") {
+                    target.style.background = "red"; //注意"tagName"为大写，写小写"td"会失败
+                }
+            }
+            function colorOut(ev) {
+                var e = ev || window.event;
+                var target = e.target || e.srcElement;
+                if (target.tagName == "TD" && target.style.background != "blue") {
+                    target.style.background = "white";
+                }
+            }
+            function colorClick(ev) {
+                var e = ev || window.event;
+                var target = e.target || e.srcElement;
+                if (target.tagName == "TD") {
+                    target.style.background = (target.style.background == "blue" ? "white" : "blue");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
